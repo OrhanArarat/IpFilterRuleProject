@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="20240904-1" author="orhanararat">
+        <createTable tableName="RULE">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="source_start_ip" type="VARCHAR(15)"/>
+            <column name="source_end_ip" type="VARCHAR(15)"/>
+            <column name="destination_start_ip" type="VARCHAR(15)"/>
+            <column name="destination_end_ip" type="VARCHAR(15)"/>
+            <column name="priority" type="BIGINT"/>
+            <column name="allow" type="BOOLEAN"/>
+            <column name="created_at" type="TIMESTAMP"/>
+            <column name="updated_at" type="TIMESTAMP"/>
+            <column name="deleted_at" type="TIMESTAMP"/>
+            <column name="is_deleted" type="BOOLEAN" defaultValueBoolean="false"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20240904-2" author="orhanararat">
+        <createSequence sequenceName="SEQ_RULE" startValue="1" incrementBy="1"/>
+    </changeSet>
+
+</databaseChangeLog>

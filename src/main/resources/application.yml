@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: IpFilterRuleProject
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/filterproject
+    username: user
+    password: user
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html

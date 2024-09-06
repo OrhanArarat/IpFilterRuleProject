@@ -12,6 +12,7 @@ import com.orhanararat.repository.RuleRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.drools.kiesession.rulebase.InternalKnowledgeBase;
 import org.drools.kiesession.rulebase.KnowledgeBaseFactory;
 import org.kie.api.definition.KiePackage;
@@ -33,6 +34,7 @@ public class RuleService {
     private final RuleRepository ruleRepository;
     private final RuleMapper ruleMapper;
     private final RuleHelperService ruleHelperService;
+    @Setter
     private KieSession kieSession;
 
     private InternalKnowledgeBase internalKnowledgeBase = KnowledgeBaseFactory.newKnowledgeBase();
